@@ -49,3 +49,9 @@ What I have tried:
 
     - build fail: PluginError: Error with plugin "katex": Cannot find module 'katex'
     - use fixed version
+
+- [[dq] #N/A make inline indicator as $ and block one as 35958 · dqisme/plugin-katex@eff8968](https://github.com/dqisme/plugin-katex/commit/eff8968d7b5cfbfa7569777d0eee4536dce27e86)
+
+    - build fail: Template render error: (/tmp/book/AI__硬體介紹與環境設定.md)  ParseError: KaTeX parse error: Expected group after '_' at position 6: 46400_̲_)  [time=Oct 0…
+    - single dollar sign $ problem
+
