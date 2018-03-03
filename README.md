@@ -43,6 +43,10 @@ What I have tried:
 
 - [Render katex using JS instead of blocks · SamLau95/gitbook-plugin-katex-plus@7889258](https://github.com/SamLau95/gitbook-plugin-katex-plus/commit/78892588d6142adf1fbe02a320aeeba9c6cede5e)
 
+    - [javascript - How can I render all inline formulas in $..$ with KaTeX? - Stack Overflow](https://stackoverflow.com/questions/27375252/how-can-i-render-all-inline-formulas-in-with-katex)
+
+        > Yes, you can render all \$-delimited formulas inline using KaTeX's auto-render extension. Per the documentation on that page, $ is not one of the default delimiters so you'll need to set it when you call renderMathInElement() and set display to false, which renders inline. Below is one example and another from KaTeX can be found here.
+
     - OK, but still have some render issue
         it can correctly display this:
             $$
