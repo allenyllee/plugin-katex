@@ -39,11 +39,20 @@ What I have tried:
 
 - [use \\(, \\), \\[ and \\] replace $$ · erictt/plugin-katex@67f7ae5](https://github.com/erictt/plugin-katex/commit/67f7ae560210860f3fcadade0901e2f92c3dafe3)
 
-    - OK, but can't support \$
+    - OK, but can't support dollar sign \$
 
 - [Render katex using JS instead of blocks · SamLau95/gitbook-plugin-katex-plus@7889258](https://github.com/SamLau95/gitbook-plugin-katex-plus/commit/78892588d6142adf1fbe02a320aeeba9c6cede5e)
 
-    - OK, but still have some bug
+    - OK, but still have some render issue
+        it can correctly display this:
+            $$
+            o_j=softmax(z_j)=\frac{e^{z_j}}{\sum_j e^{z_j}}
+            $$
+        but can not do for this:
+            $$
+            z_j=\sum_i w_{ij} y_i+b_j
+            $$
+        very strange...
 
 - [using master branch for katex · qinix/plugin-katex@ebd41c3](https://github.com/qinix/plugin-katex/commit/ebd41c31d36496cdf1820b3d19065277a17aa7fb)
 
@@ -60,3 +69,4 @@ What I have tried:
     - build fial: TypeError: block.get is not a function
     - it seems that the return value is exception object, which has no get method.
     - tries to return empty string when exception
+    - build ok, but still have some render issue...
