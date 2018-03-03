@@ -25,9 +25,14 @@ module.exports = {
             process: function(blk) {
                 var tex = blk.body;
                 var isInline = !(tex[0] === "$" && tex[tex.length-1] === "$");
-                var output = katex.renderToString(tex, {
-                    displayMode: !isInline
-                });
+                try {
+                    var output = katex.renderToString(tex, {
+                        displayMode: !isInline
+                    });
+                } catch (e) {
+                    console.error(e)
+                    output = e
+                }
                 return output;
             }
         }
