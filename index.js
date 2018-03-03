@@ -21,10 +21,10 @@ module.exports = {
               start: '$$',
               end: '$$'
             },
-            process(block) {
+            process: function(blk) {
               var output = ''
               try {
-                output = katex.renderToString(block.body, {
+                output = katex.renderToString(blk.body, {
                   displayMode: true
                 })
               } catch (e) {
@@ -40,10 +40,10 @@ module.exports = {
               start: '$',
               end: '$'
             },
-            process(block) {
+            process: function(blk) {
               var output = ''
               try {
-                output = katex.renderToString(block.body, {
+                output = katex.renderToString(blk.body, {
                   displayMode: false
                 })
               } catch (e) {
