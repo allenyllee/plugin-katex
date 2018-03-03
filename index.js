@@ -22,27 +22,30 @@ module.exports = {
                 end: "$$"
             },
             process: function(blk) {
-                var tex = blk.body;
+                var tex = blk.body.replace(/\\([^a-zA-Z0-9])/g, "$1");
+                var isInline = false;
                 var output = katex.renderToString(tex, {
-                    displayMode: true
+                    displayMode: !isInline
                 });
 
                 return output;
             }
         },
-        math_inline: {
+        inline_math: {
             shortcuts: {
-                parsers: ["markdown", "asciidoc", "restructuredtext"],
-                start: "$",
-                end: "$"
+              parsers: ["markdown", "asciidoc", "restructuredtext"],
+              start: "$",
+              end: "$"
             },
             process: function(blk) {
-                var tex = blk.body;
-                var output = katex.renderToString(tex, {
-                    displayMode: false
-                });
-
-                return output;
+              //console.log(blk);
+              var tex = blk.body.replace(/\\([^a-zA-Z0-9])/g, "$1");
+              //console.log(tex);
+              var isInline = true;
+              var output = katex.renderToString(tex, {
+                displayMode: !isInline
+              });
+              return output;
             }
         }
     }
