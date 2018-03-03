@@ -15,37 +15,42 @@ module.exports = {
         ]
     },
     blocks: {
-        math: {
+        math: { // Double dollar signs ($) for math blocks (centered)
             shortcuts: {
-                parsers: ["markdown", "asciidoc", "restructuredtext"],
-                start: "$$",
-                end: "$$"
+              parsers: ['markdown', 'asciidoc', 'restructuredtext'],
+              start: '$$',
+              end: '$$'
             },
-            process: function(blk) {
-                var tex = blk.body.replace(/\\([^a-zA-Z0-9])/g, "$1");
-                var isInline = false;
-                var output = katex.renderToString(tex, {
-                    displayMode: !isInline
-                });
-
-                return output;
+            process(block) {
+              var output = ''
+              try {
+                output = katex.renderToString(block.body, {
+                  displayMode: true
+                })
+              } catch (e) {
+                console.error(e)
+                output = e
+              }
+              return output
             }
         },
-        inline_math: {
+        math_inline: { // Single dollar sign for inline math
             shortcuts: {
-              parsers: ["markdown", "asciidoc", "restructuredtext"],
-              start: "$",
-              end: "$"
+              parsers: ['markdown', 'asciidoc', 'restructuredtext'],
+              start: '$',
+              end: '$'
             },
-            process: function(blk) {
-              //console.log(blk);
-              var tex = blk.body.replace(/\\([^a-zA-Z0-9])/g, "$1");
-              //console.log(tex);
-              var isInline = true;
-              var output = katex.renderToString(tex, {
-                displayMode: !isInline
-              });
-              return output;
+            process(block) {
+              var output = ''
+              try {
+                output = katex.renderToString(block.body, {
+                  displayMode: false
+                })
+              } catch (e) {
+                console.error(e)
+                output = e
+              }
+              return output
             }
         }
     }
