@@ -23,6 +23,7 @@ module.exports = {
                 end: "$"
             },
             process: function(blk) {
+                var output = ''
                 var tex = blk.body;
                 var isInline = !(tex[0] === "$" && tex[tex.length-1] === "$");
                 try {
@@ -31,7 +32,6 @@ module.exports = {
                     });
                 } catch (e) {
                     console.error(e)
-                    output = e
                 }
                 return output;
             }

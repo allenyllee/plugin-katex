@@ -55,3 +55,8 @@ What I have tried:
     - build fail: Template render error: (/tmp/book/AI__硬體介紹與環境設定.md)  ParseError: KaTeX parse error: Expected group after '_' at position 6: 46400_̲_)  [time=Oct 0…
     - single dollar sign $ problem
 
+- [try again... cache error · allenyllee/plugin-katex@ca0e1c9](https://github.com/allenyllee/plugin-katex/commit/ca0e1c93ab1714a6386d272ab53d05aabe1cbe20)
+
+    - build fial: TypeError: block.get is not a function
+    - it seems that the return value is exception object, which has no get method.
+    - tries to return empty string when exception
