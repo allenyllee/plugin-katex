@@ -57,8 +57,8 @@ What I have tried:
             z_j=\sum_i w_{ij} y_i+b_j
             $$
         very strange...
-        ![](https://screenshotscdn.firefoxusercontent.com/images/0236c753-adb9-4213-83f6-6c913ca1c61b.png)
-        ![](https://screenshotscdn.firefoxusercontent.com/images/d8fdc829-cfa8-4cac-a180-34797371c869.png)
+        ![](https://i.imgur.com/v914GwP.png)
+        ![](https://i.imgur.com/Mg3D4vn.png)
 
 - [using master branch for katex · qinix/plugin-katex@ebd41c3](https://github.com/qinix/plugin-katex/commit/ebd41c31d36496cdf1820b3d19065277a17aa7fb)
 
